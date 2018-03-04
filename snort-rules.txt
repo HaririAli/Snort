@@ -1,0 +1,4 @@
+alert ip any any -> any any (msg:“ SECURITY detected” ;content:"SECURITY"; sid:1234567)
+alert ip any any -> any any (msg:“Hello World detected” ;pcre:"/Hello\s+World/"; sid:1234568)
+alert ip any any -> any 25 (msg:“Mail capital quoted word”; pcre:"/["][A-Z][a-zA-Z]{3,6}+["]/"; sid: 1234569)
+alert ip any any -> any 80 (msg:“NI Number detected” ;pcre:"/^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}(?:\s*\d\s*){6}([A-DFMP])?$/"; sid:1234570)
